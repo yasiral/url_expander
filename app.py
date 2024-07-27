@@ -3,6 +3,10 @@ import requests
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Welcome to the URL Expander Service. Use the /expand endpoint to expand shortened URLs."
+
 @app.route('/expand', methods=['POST'])
 def expand_url():
     data = request.get_json()
@@ -11,4 +15,6 @@ def expand_url():
     return jsonify({'expanded_url': response.url})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    import os
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
