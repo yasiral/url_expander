@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    $$('#urlexpander-expand-btn').on('click', function() {
+    $('#urlexpander-expand-btn').on('click', function(e) {
         e.preventDefault();
 
         var shortUrl = $('#urlexpander-input').val();
@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
             url: urlexpander_vars.ajax_url,
             data: {
                 action: 'urlexpander',
-		nonce: urlexpander_ajax.nonce,
+		nonce: urlexpander_vars.nonce,
                 short_url: shortUrl
             },
             beforeSend: function() {
