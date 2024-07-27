@@ -8,11 +8,11 @@
 
 // Enqueue the JavaScript file
 function enqueue_scripts() {
-    wp_enqueue_script('your-plugin-js', plugin_dir_url(__FILE__) . 'js/urlexpander-plugin.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('your-plugin-js', plugin_dir_url(__FILE__) . 'urlexpander-plugin.js', array('jquery'), '1.0', true);
 	wp_localize_script('your-plugin-js', 'urlexpander_vars', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'api_url' => 'https://oyster-app-axykz.ondigitalocean.app/',
-		'nonce' => wp_create_nonce('rlexpander-nonce')
+	'nonce' => wp_create_nonce('urlexpander-nonce')
     ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
