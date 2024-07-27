@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
         var shortUrl = $('#short-url').val();
 
         $.ajax({
-            url: 'http://64.23.184.164:8001/expand',
+            url: 'https://oyster-app-axykz.ondigitalocean.app//expand',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ short_url: shortUrl }),
