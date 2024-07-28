@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
                 },
             success: function(response) {
                 if (response.success && response.data) {
-                    $('#urlexpander-result').html(response.data.url); // Adjust depending on actual API response structure
+                    $('#urlexpander-result').html(response.data.expanded_url); // Adjust depending on actual API response structure
                 } else {
                     $('#urlexpander-result').html('Failed to expand URL');
                 }
