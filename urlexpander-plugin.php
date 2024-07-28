@@ -11,7 +11,7 @@ function enqueue_scripts() {
     wp_enqueue_script('your-plugin-js', plugin_dir_url(__FILE__) . 'urlexpander-plugin.js', array('jquery'), '1.0', true);
 	wp_localize_script('your-plugin-js', 'urlexpander_vars', array(
         'ajax_url' => admin_url('admin-ajax.php'),
-        'api_url' => 'https://oyster-app-axykz.ondigitalocean.app/',
+        'api_url' => 'https://oyster-app-axykz.ondigitalocean.app/expand',
 	'nonce' => wp_create_nonce('urlexpander-nonce')
     ));
 }
